@@ -20,7 +20,7 @@ const Service = ({ service }) => {
           <p className="text-2xl text-orange-500 font-bold">
             ${price}/<small>month</small>{" "}
           </p>
-          <Link to={`/service/${_id}`} className="btn btn-outline btn-warning">View Details</Link>
+          <Link to={`/services/${_id}`} className="btn btn-outline btn-warning">View Details</Link>
         </div>
       </div>
     </div>
