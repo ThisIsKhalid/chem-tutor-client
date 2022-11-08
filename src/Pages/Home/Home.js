@@ -61,7 +61,7 @@ const Home = () => {
             <Service key={service._id} service={service}></Service>
           ))}
         </div>
-        <p className="text-center mt-10"><Link to='/services' className="py-2 px-5 bg-cyan-500 rounded-md text-xl font-medium text-white">See All</Link></p>
+        <p className="text-center my-10"><Link to='/services' className="py-2 px-5 bg-cyan-500 rounded-md text-xl font-medium text-white">See All</Link></p>
       </div>
     </section>
   );
