@@ -35,7 +35,7 @@ const Home = () => {
           </div>
           <div className="flex flex-col space-y-4 sm:items-center sm:justify-center sm:flex-row sm:space-y-0 sm:space-x-4 lg:justify-start">
             <Link
-              to="/"
+              to="/services"
               className="px-5 py-2 text-lg font-semibold border rounded border-orange-600 flex items-center uppercase hover:bg-orange-400 hover:text-white"
             >
               Explore All Courses
