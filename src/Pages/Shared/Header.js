@@ -43,7 +43,7 @@ const Header = () => {
               to="/home"
               aria-label="Home"
               title="Home"
-              className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
+              className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-purple-600"
             >
               Home
             </Link>
@@ -53,7 +53,7 @@ const Header = () => {
               to="/services"
               aria-label="services"
               title="services"
-              className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
+              className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-purple-600"
             >
               Services
             </Link>
@@ -61,11 +61,31 @@ const Header = () => {
           {user?.email ? (
             <>
               <li>
+                <Link
+                  to="/my_reveiws"
+                  aria-label="My Reviews"
+                  title="My Reviews"
+                  className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-purple-600"
+                >
+                  My Reviews
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/add_service"
+                  aria-label="Add Service"
+                  title="Add Service"
+                  className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-purple-600"
+                >
+                  Add Service
+                </Link>
+              </li>
+              <li>
                 <button
                   onClick={handleLogOut}
                   aria-label="Sign Out"
                   title="Sign Out"
-                  className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
+                  className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-purple-600"
                 >
                   Sign Out
                 </button>
@@ -78,7 +98,7 @@ const Header = () => {
                   to="/signup"
                   aria-label="Sign UP"
                   title="Sign UP"
-                  className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
+                  className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-purple-600"
                 >
                   Sign UP
                 </Link>
@@ -88,7 +108,7 @@ const Header = () => {
                   to="/signin"
                   aria-label="Sign IN"
                   title="Sign IN"
-                  className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
+                  className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-purple-600"
                 >
                   Sign IN
                 </Link>
@@ -163,7 +183,7 @@ const Header = () => {
                         to="/home"
                         aria-label="Home"
                         title="Home"
-                        className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
+                        className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-purple-600"
                       >
                         Home
                       </Link>
@@ -173,31 +193,68 @@ const Header = () => {
                         to="/services"
                         aria-label="services"
                         title="services"
-                        className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
+                        className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-purple-600"
                       >
                         Services
                       </Link>
                     </li>
-                    <li>
-                      <Link
-                        to="/signup"
-                        aria-label="Sign UP"
-                        title="Sign UP"
-                        className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
-                      >
-                        Sign UP
-                      </Link>
-                    </li>
-                    <li>
-                      <Link
-                        to="/signin"
-                        aria-label="Sign IN"
-                        title="Sign IN"
-                        className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
-                      >
-                        Sign IN
-                      </Link>
-                    </li>
+                    {user?.email ? (
+                      <>
+                        <li>
+                          <Link
+                            to="/my_reveiws"
+                            aria-label="My Reviews"
+                            title="My Reviews"
+                            className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-purple-600"
+                          >
+                            My Reviews
+                          </Link>
+                        </li>
+                        <li>
+                          <Link
+                            to="/add_service"
+                            aria-label="Add Service"
+                            title="Add Service"
+                            className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-purple-600"
+                          >
+                            Add Service
+                          </Link>
+                        </li>
+                        <li>
+                          <button
+                            onClick={handleLogOut}
+                            aria-label="Sign out"
+                            title="Sign Out"
+                            className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-purple-600"
+                          >
+                            Sign Out
+                          </button>
+                        </li>
+                      </>
+                    ) : (
+                      <>
+                        <li>
+                          <Link
+                            to="/signup"
+                            aria-label="Sign UP"
+                            title="Sign UP"
+                            className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-purple-600"
+                          >
+                            Sign UP
+                          </Link>
+                        </li>
+                        <li>
+                          <Link
+                            to="/signin"
+                            aria-label="Sign IN"
+                            title="Sign IN"
+                            className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-purple-600"
+                          >
+                            Sign IN
+                          </Link>
+                        </li>
+                      </>
+                    )}
                   </ul>
                 </nav>
               </div>
