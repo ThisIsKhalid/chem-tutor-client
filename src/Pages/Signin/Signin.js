@@ -16,13 +16,12 @@ const Signin = () => {
     const password = form.password.value;
     
     signIn(email, password)
-    .then(res => {
-      console.log(res.user);
+    .then(() => {
       toast.success('SignIn Succesfull!!')
       form.reset();
     })
     .catch(err => {
-      console.error(err);
+      toast.error(err.message);
     })
   };
 

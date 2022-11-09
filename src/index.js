@@ -13,7 +13,7 @@ root.render(
     <AuthProvider>
       <ToastContainer
         position="top-right"
-        autoClose={1000}
+        autoClose={1500}
         transition={Slide}
       />
       <App />
