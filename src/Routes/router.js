@@ -4,7 +4,7 @@ import AddServices from "../Pages/AddServices/AddServices";
 import Home from "../Pages/Home/Home";
 import MyReviews from "../Pages/MyReviews/MyReviews";
 import ErrorPage from "../Pages/Others/ErrorPage";
-import ServiceDetails from "../Pages/ServiceDetails.js/ServiceDetails";
+import ServiceDetails from "../Pages/ServiceDetails/ServiceDetails/ServiceDetails";
 import Services from "../Pages/Services/Services";
 import Signin from "../Pages/Signin/Signin";
 import Signup from "../Pages/Signin/Signup";
@@ -29,25 +29,25 @@ export const router = createBrowserRouter([
         loader: () => fetch("http://localhost:5000/services"),
       },
       {
-        path: '/services/:id',
+        path: "/services/:id",
         element: <ServiceDetails></ServiceDetails>
       },
       {
-        path: '/signup',
-        element: <Signup></Signup>
+        path: "/signup",
+        element: <Signup></Signup>,
       },
       {
-        path: '/signin',
-        element: <Signin></Signin>
+        path: "/signin",
+        element: <Signin></Signin>,
       },
       {
-        path: '/my_reveiws',
-        element: <MyReviews></MyReviews>
+        path: "/my_reveiws",
+        element: <MyReviews></MyReviews>,
       },
       {
-        path: '/add_service',
-        element: <AddServices></AddServices>
-      }
+        path: "/add_service",
+        element: <AddServices></AddServices>,
+      },
     ],
   },
 ]);

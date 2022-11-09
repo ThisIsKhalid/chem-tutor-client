@@ -9,7 +9,7 @@ const Home = () => {
   const [services, setServices] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/trending")
+    fetch("http://localhost:5000/latest")
       .then((res) => res.json())
       .then((data) => setServices(data));
   }, []);
@@ -54,7 +54,7 @@ const Home = () => {
       <div className="container mx-auto">
         <h1 className="text-4xl font-bold mb-10 flex items-center justify-center">
           <FaAngleLeft />
-          <span className="text-cyan-500">Trending Now </span>
+          <span className="text-cyan-500">Latest Courses</span>
           <FaAngleRight />
         </h1>
         <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-10">
