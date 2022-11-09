@@ -1,14 +1,21 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
-import AuthProvider from './Context/AuthProvider';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { Slide, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import App from "./App";
+import AuthProvider from "./Context/AuthProvider";
+import "./index.css";
+import reportWebVitals from "./reportWebVitals";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <AuthProvider>
+      <ToastContainer
+        position="top-right"
+        autoClose={1000}
+        transition={Slide}
+      />
       <App />
     </AuthProvider>
   </React.StrictMode>
