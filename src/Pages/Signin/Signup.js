@@ -4,9 +4,10 @@ import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
 import signupImg from "../../Assets/Sign up-bro.svg";
 import { AuthContext } from "../../Context/AuthProvider";
+import { spinner } from "../Others/Spinner";
 
 const Signup = () => {
-  const { register, updateUserProfile, googleSignIn } = useContext(AuthContext);
+  const { register, updateUserProfile, googleSignIn, loading } = useContext(AuthContext);
 
   const handleSignUp = (event) => {
     event.preventDefault();
@@ -50,6 +51,10 @@ const Signup = () => {
         toast.error(err.message);
       });
   };
+
+  if (loading) {
+    return spinner();
+  }
 
   return (
     <div className="flex lg:flex-row flex-col items-center justify-evenly">

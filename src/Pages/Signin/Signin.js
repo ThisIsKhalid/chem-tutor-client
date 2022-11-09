@@ -1,12 +1,17 @@
 import React, { useContext } from "react";
 import { FaFacebook, FaGithub, FaGoogle } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import signinImg from "../../Assets/Sign in.svg";
 import { AuthContext } from "../../Context/AuthProvider";
+import { spinner } from "../Others/Spinner";
 
 const Signin = () => {
-  const { signIn, googleSignIn } = useContext(AuthContext);
+  const { signIn, googleSignIn, loading } = useContext(AuthContext);
+  
+  const navigate = useNavigate();
+  const location = useLocation();
+  const from = location.state?.from?.pathname || "/";
 
   const handleSignin = (event) => {
     event.preventDefault();
@@ -19,6 +24,7 @@ const Signin = () => {
       .then(() => {
         toast.success("SignIn Succesfull!!");
         form.reset();
+        navigate(from, { replace: true });
       })
       .catch((err) => {
         toast.error(err.message);
@@ -29,11 +35,16 @@ const Signin = () => {
     googleSignIn()
       .then((res) => {
         toast.success("SignIn Succesfull!!");
+        navigate(from, { replace: true });
       })
       .catch((err) => {
         toast.error(err.message);
       });
   };
+
+  if (loading) {
+    return spinner();
+  }
 
   return (
     <div className="flex lg:flex-row flex-col items-center justify-evenly">

@@ -51,11 +51,11 @@ const Header = () => {
           <li>
             <Link
               to="/services"
-              aria-label="services"
-              title="services"
+              aria-label="Courses"
+              title="Courses"
               className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-purple-600"
             >
-              Services
+              Courses
             </Link>
           </li>
           {user?.email ? (
@@ -191,11 +191,11 @@ const Header = () => {
                     <li>
                       <Link
                         to="/services"
-                        aria-label="services"
-                        title="services"
+                        aria-label="Courses"
+                        title="Courses"
                         className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-purple-600"
                       >
-                        Services
+                        Courses
                       </Link>
                     </li>
                     {user?.email ? (
