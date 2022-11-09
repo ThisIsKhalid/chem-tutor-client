@@ -7,7 +7,6 @@ const ServiceDetails = () => {
 
   const [service, setService] = useState({});
   const { name, img, price,  description } = service;
-  console.log(service);
 
   useEffect(() => {
     fetch(`http://localhost:5000/services/${id}`)
@@ -33,7 +32,7 @@ const ServiceDetails = () => {
       </div>
 
       {/* ------------- all reviews -------------- */}
-      <Reviews></Reviews>
+      <Reviews serviceId={id}></Reviews>
     </section>
   );
 };
