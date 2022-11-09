@@ -63,13 +63,13 @@ const Signup = () => {
               />
             </div>
             <button className="block w-full p-3 text-center rounded-sm text-gray-900 bg-violet-400 hover:bg-violet-600">
-              Register
+              Sign UP
             </button>
           </form>
           <div className="flex items-center pt-4 space-x-1">
             <div className="flex-1 h-px sm:w-16 bg-gray-700"></div>
             <p className="px-3 text-sm text-gray-800">
-              Login with social accounts
+              Sign Up with social accounts
             </p>
             <div className="flex-1 h-px sm:w-16 bg-gray-700"></div>
           </div>
