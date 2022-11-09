@@ -1,15 +1,14 @@
 import React, { useEffect, useState } from 'react';
 
-const MyReview = ({ review }) => {
+const MyReview = ({ review, handleReveiwDelete }) => {
+  const {_id, serviceId, name, img, description, time } = review;
+  const [service, setService] = useState({});
 
-    const { serviceId, name, img, description, time } = review;
-    const [service, setService] = useState({});
-
-    useEffect(() => {
-      fetch(`http://localhost:5000/services/${serviceId}`)
-        .then((res) => res.json())
-        .then((data) => setService(data));
-    }, [serviceId]);
+  useEffect(() => {
+    fetch(`http://localhost:5000/services/${serviceId}`)
+      .then((res) => res.json())
+      .then((data) => setService(data));
+  }, [serviceId]);
 
   return (
     <div className="container flex flex-col w-full lg:w-3/4 p-6 mx-auto divide-y rounded-md divide-gray-300 bg-gray-50 text-gray-800 border border-gray-300 mb-5">
@@ -41,7 +40,9 @@ const MyReview = ({ review }) => {
       <div className="flex justify-end pt-3">
         <div>
           <button className="btn btn-warning btn-sm mr-2">Edit</button>
-          <button className="btn btn-error btn-sm">Delete</button>
+          <button onClick={() => handleReveiwDelete(_id)} className="btn btn-error btn-sm">
+            Delete
+          </button>
         </div>
       </div>
     </div>
