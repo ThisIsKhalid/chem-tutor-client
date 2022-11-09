@@ -8,12 +8,16 @@ import Review from "./Review";
 const Reviews = ({ serviceId }) => {
   const { user } = useContext(AuthContext);
   const [reviews, setReviews] = useState([]);
+  const [refresh, setRefresh] = useState(true);
 
   useEffect(() => {
     fetch(`http://localhost:5000/reviews/${serviceId}`)
       .then((res) => res.json())
-      .then((data) => setReviews(data));
-  }, [serviceId]);
+      .then((data) => {
+        setReviews(data);
+        setRefresh(!refresh);
+      });
+  }, [serviceId, refresh]);
 
   const addNewReveiw = (event) => {
     event.preventDefault();
@@ -66,6 +70,7 @@ const Reviews = ({ serviceId }) => {
                 Your Review
               </label>
               <textarea
+                required
                 name="description"
                 id="description"
                 rows="3"
