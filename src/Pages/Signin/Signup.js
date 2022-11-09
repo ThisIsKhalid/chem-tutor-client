@@ -6,7 +6,7 @@ import signupImg from "../../Assets/Sign up-bro.svg";
 import { AuthContext } from "../../Context/AuthProvider";
 
 const Signup = () => {
-  const { user, register } = useContext(AuthContext);
+  const { register, updateUserProfile } = useContext(AuthContext);
 
   const handleSignUp = (event) => {
     event.preventDefault();
@@ -21,11 +21,24 @@ const Signup = () => {
       .then((res) => {
         const user = res.user;
         console.log(user);
-        form.reset();
+        toast.success('Thanks for joining us!!');
+
+        updateUserProfile({
+          displayName: name,
+          photoURL: photoURL,
+        })
+        .then(() => {
+            toast.success('Profile Updated!!');
+            form.reset();
+        })
+        .catch(err => {
+            toast.error('Profile updating failed. Please try again');
+            console.error(err);
+        })
       })
       .catch((err) => {
         toast.error("Email already in use");
-        console.log(err.name, err.message);
+        // console.log(err.name, err.message);
       });
   };
 
