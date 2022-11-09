@@ -6,7 +6,7 @@ import signinImg from "../../Assets/Sign in.svg";
 import { AuthContext } from "../../Context/AuthProvider";
 
 const Signin = () => {
-  const { signIn } = useContext(AuthContext);
+  const { signIn, googleSignIn } = useContext(AuthContext);
 
   const handleSignin = (event) => {
     event.preventDefault();
@@ -14,15 +14,25 @@ const Signin = () => {
 
     const email = form.email.value;
     const password = form.password.value;
-    
+
     signIn(email, password)
-    .then(() => {
-      toast.success('SignIn Succesfull!!')
-      form.reset();
-    })
-    .catch(err => {
-      toast.error(err.message);
-    })
+      .then(() => {
+        toast.success("SignIn Succesfull!!");
+        form.reset();
+      })
+      .catch((err) => {
+        toast.error(err.message);
+      });
+  };
+
+  const handleGoogleSignIn = () => {
+    googleSignIn()
+      .then((res) => {
+        toast.success("SignIn Succesfull!!");
+      })
+      .catch((err) => {
+        toast.error(err.message);
+      });
   };
 
   return (
@@ -74,7 +84,7 @@ const Signin = () => {
           <div className="flex-1 h-px sm:w-16 bg-gray-700"></div>
         </div>
         <div className="flex flex-row justify-evenly">
-          <button className="text-3xl">
+          <button onClick={handleGoogleSignIn} className="text-3xl">
             <FaGoogle></FaGoogle>
           </button>
           <button className="text-3xl">

@@ -6,7 +6,7 @@ import signupImg from "../../Assets/Sign up-bro.svg";
 import { AuthContext } from "../../Context/AuthProvider";
 
 const Signup = () => {
-  const { register, updateUserProfile } = useContext(AuthContext);
+  const { register, updateUserProfile, googleSignIn } = useContext(AuthContext);
 
   const handleSignUp = (event) => {
     event.preventDefault();
@@ -19,8 +19,7 @@ const Signup = () => {
 
     register(email, password)
       .then((res) => {
-        const user = res.user;
-        console.log(user);
+        // const user = res.user;
         toast.success('Thanks for joining us!!');
 
         updateUserProfile({
@@ -33,12 +32,22 @@ const Signup = () => {
         })
         .catch(err => {
             toast.error('Profile updating failed. Please try again');
-            console.error(err);
+            
         })
       })
       .catch((err) => {
-        toast.error("Email already in use");
+        toast.error(err.message);
         // console.log(err.name, err.message);
+      });
+  };
+
+  const handleGoogleSignIn = () => {
+    googleSignIn()
+      .then(() => {
+        toast.success("SignIn Succesfull!!");
+      })
+      .catch((err) => {
+        toast.error(err.message);
       });
   };
 
@@ -115,7 +124,7 @@ const Signup = () => {
           <div className="flex-1 h-px sm:w-16 bg-gray-700"></div>
         </div>
         <div className="flex flex-row justify-evenly">
-          <button className="text-3xl">
+          <button onClick={handleGoogleSignIn} className="text-3xl">
             <FaGoogle></FaGoogle>
           </button>
           <button className="text-3xl">
