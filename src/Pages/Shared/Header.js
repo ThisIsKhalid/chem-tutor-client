@@ -9,8 +9,8 @@ const Header = () => {
         <div className="relative flex items-center justify-between">
           <Link
             to="/"
-            aria-label="Company"
-            title="Company"
+            aria-label="CHEM TUTOR"
+            title="CHEM TUTOR"
             className="inline-flex items-center"
           >
             <img className="h-14 w-full" src={logo} alt="" />
@@ -46,22 +46,22 @@ const Header = () => {
             </li>
             <li>
               <Link
-                to="/"
-                aria-label="Product pricing"
-                title="Product pricing"
+                to="/signup"
+                aria-label="Sign UP"
+                title="Sign UP"
                 className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
               >
-                Pricing
+                Sign UP
               </Link>
             </li>
             <li>
               <Link
-                to="/"
-                aria-label="About us"
-                title="About us"
+                to="/signin"
+                aria-label="Sign IN"
+                title="Sign IN"
                 className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
               >
-                About us
+                Sign IN
               </Link>
             </li>
           </ul>
@@ -94,8 +94,8 @@ const Header = () => {
                     <div>
                       <Link
                         to="/"
-                        aria-label="Company"
-                        title="Company"
+                        aria-label="CHEM TUTOR"
+                        title="CHEM TUTOR"
                         className="inline-flex items-center"
                       >
                         <img className="h-12 w-full" src={logo} alt="" />
@@ -149,22 +149,22 @@ const Header = () => {
                       </li>
                       <li>
                         <Link
-                          to="/"
-                          aria-label="Product pricing"
-                          title="Product pricing"
+                          to="/signup"
+                          aria-label="Sign UP"
+                          title="Sign UP"
                           className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
                         >
-                          Pricing
+                          Sign UP
                         </Link>
                       </li>
                       <li>
                         <Link
-                          to="/"
-                          aria-label="About us"
-                          title="About us"
+                          to="/signin"
+                          aria-label="Sign IN"
+                          title="Sign IN"
                           className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
                         >
-                          About us
+                          Sign IN
                         </Link>
                       </li>
                     </ul>

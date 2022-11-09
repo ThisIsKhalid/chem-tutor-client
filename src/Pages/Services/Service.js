@@ -14,7 +14,6 @@ const Service = ({ service }) => {
           <img className="rounded-t-md w-full" src={img} alt="Shoes" />
         </PhotoView>
       </PhotoProvider>
-      {/* <img className="rounded-t-md" src={img} alt="Shoes" /> */}
       <div className="card-body">
         <h2 className="text-2xl font-bold">{name}</h2>
         <p>{description.slice(0, 100)}</p>

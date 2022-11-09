@@ -49,7 +49,8 @@ const Home = () => {
           <Lottie animationData={chemistry_animation} loop={true} />;
         </div>
       </div>
-
+      
+    {/*--------- trending now section  ------------*/}
       <div className="container mx-auto">
         <h1 className="text-4xl font-bold mb-10 flex items-center justify-center">
           <FaAngleLeft />
