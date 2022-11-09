@@ -4,14 +4,26 @@ import { Link } from 'react-router-dom';
 import signinImg from "../../Assets/Sign in.svg"
 
 const Signin = () => {
+
+  const handleSignin = event => {
+    event.preventDefault();
+    const form = event.target;
+
+    const email = form.email.value;
+    const password = form.password.value;
+    console.log(email, password);
+  }
+
+
+
     return (
-      <div className="flex md:flex-row flex-col items-center justify-evenly">
-        <div className="w-1/2">
+      <div className="flex lg:flex-row flex-col items-center justify-evenly">
+        <div className="lg:w-1/2 md:w-3/4 w-full">
           <img className="w-3/4 mx-auto" src={signinImg} alt="" />
         </div>
         <div className="w-full max-w-md p-8 space-y-3 rounded-xl bg-gray-50 shadow-lg mt-5 border border-gray-200 mx-auto">
           <h1 className="text-2xl font-bold text-center">Sign IN</h1>
-          <form className="space-y-6 ng-untouched ng-pristine ng-valid">
+          <form onSubmit={handleSignin} className="space-y-6 ng-untouched ng-pristine ng-valid">
             <div className="space-y-1">
               <label htmlFor="email" className="block text-gray-700">
                 Email

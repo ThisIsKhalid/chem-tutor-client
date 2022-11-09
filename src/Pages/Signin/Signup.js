@@ -4,14 +4,28 @@ import { Link } from 'react-router-dom';
 import signupImg from '../../Assets/Sign up-bro.svg'
 
 const Signup = () => {
+
+    const handleSignUp = (event) => {
+      event.preventDefault();
+      const form = event.target;
+
+      const name = form.name.value;
+      const photoURL = form.photoURL.value;
+      const email = form.email.value;
+      const password = form.password.value;
+      console.log(name, photoURL, email, password);
+    };
+
+
+
     return (
-      <div className="flex md:flex-row flex-col items-center justify-evenly">
-        <div className="w-1/2">
-          <img className='w-3/4 mx-auto' src={signupImg} alt="" />
+      <div className="flex lg:flex-row flex-col items-center justify-evenly">
+        <div className="lg:w-1/2 md:w-3/4 w-full">
+          <img className="w-3/4 mx-auto" src={signupImg} alt="" />
         </div>
         <div className="w-full max-w-md p-8 space-y-3 rounded-xl bg-gray-50 shadow-lg mt-5 border border-gray-200 mx-auto">
           <h1 className="text-2xl font-bold text-center">Sign UP</h1>
-          <form className="space-y-6 ng-untouched ng-pristine ng-valid">
+          <form onSubmit={handleSignUp} className="space-y-6 ng-untouched ng-pristine ng-valid">
             <div className="space-y-1">
               <label htmlFor="username" className="block text-gray-700">
                 Username
