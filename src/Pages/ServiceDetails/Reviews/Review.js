@@ -1,7 +1,7 @@
 import React from "react";
 
 const Review = ({ review }) => {
-  const { img, name, description } = review;
+  const { img, name, description, time } = review;
 
   return (
     <div className="container flex flex-col w-full max-w-lg p-6 mx-auto divide-y rounded-md divide-gray-300 bg-gray-50 text-gray-800 border border-gray-300">
@@ -16,7 +16,7 @@ const Review = ({ review }) => {
           </div>
           <div>
             <h4 className="font-bold">{name}</h4>
-            <span className="text-xs text-gray-600">2 days ago</span>
+            <span className="text-xs text-gray-600">{`${time}`.slice(0, 10)}</span>
           </div>
         </div>
       </div>
