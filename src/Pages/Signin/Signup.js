@@ -1,9 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { FaFacebook, FaGithub, FaGoogle } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import signupImg from '../../Assets/Sign up-bro.svg'
+import { AuthContext } from '../../Context/AuthProvider';
 
 const Signup = () => {
+
+    const {user} = useContext(AuthContext);
+    console.log(user);
 
     const handleSignUp = (event) => {
       event.preventDefault();
