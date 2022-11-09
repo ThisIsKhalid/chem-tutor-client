@@ -6,8 +6,8 @@ import { AuthContext } from '../../Context/AuthProvider';
 
 const Signup = () => {
 
-    const {user} = useContext(AuthContext);
-    console.log(user);
+    // const {user} = useContext(AuthContext);
+    // console.log(user);
 
     const handleSignUp = (event) => {
       event.preventDefault();
