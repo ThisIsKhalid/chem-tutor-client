@@ -5,13 +5,18 @@ import { toast } from "react-toastify";
 import signupImg from "../../Assets/Sign up-bro.svg";
 import { AuthContext } from "../../Context/AuthProvider";
 import useTitle from "../../Hooks/useTitle";
+import { authToken } from "../../Token/authToken";
 import { spinner } from "../Others/Spinner";
 
 const Signup = () => {
   useTitle("SignUp");
   const { register, updateUserProfile, googleSignIn, loading } =
     useContext(AuthContext);
-    const navigate = useNavigate();
+  const navigate = useNavigate();
+
+  if (loading) {
+    return spinner();
+  }
 
   const handleSignUp = (event) => {
     event.preventDefault();
@@ -24,7 +29,8 @@ const Signup = () => {
 
     register(email, password)
       .then((res) => {
-        // const user = res.user;
+        const user = res.user;
+        authToken(user);
         toast.success("Thanks for joining us!!");
 
         updateUserProfile({
@@ -34,7 +40,7 @@ const Signup = () => {
           .then(() => {
             toast.success("Profile Updated!!");
             form.reset();
-            navigate('/')
+            navigate("/");
           })
           .catch((err) => {
             toast.error("Profile updating failed. Please try again");
@@ -48,7 +54,9 @@ const Signup = () => {
 
   const handleGoogleSignIn = () => {
     googleSignIn()
-      .then(() => {
+      .then((res) => {
+        const user = res.user;
+        authToken(user);
         toast.success("SignIn Succesfull!!");
       })
       .catch((err) => {
@@ -56,9 +64,6 @@ const Signup = () => {
       });
   };
 
-  if (loading) {
-    return spinner();
-  }
 
   return (
     <div className="flex lg:flex-row flex-col items-center justify-evenly mb-10">

@@ -36,8 +36,8 @@ export const router = createBrowserRouter([
         element: <ServiceDetails></ServiceDetails>,
       },
       {
-        path: '/blogs',
-        element: <Blogs></Blogs>
+        path: "/blogs",
+        element: <Blogs></Blogs>,
       },
       {
         path: "/signup",
@@ -70,7 +70,8 @@ export const router = createBrowserRouter([
             <EditReview></EditReview>
           </PrivateRoute>
         ),
-        loader: ({params}) => fetch(`http://localhost:5000/edit_reveiw/${params.id}`),
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/edit_reveiw/${params.id}`),
       },
     ],
   },

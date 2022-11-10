@@ -5,15 +5,19 @@ import { toast } from "react-toastify";
 import signinImg from "../../Assets/Sign in.svg";
 import { AuthContext } from "../../Context/AuthProvider";
 import useTitle from "../../Hooks/useTitle";
+import { authToken } from "../../Token/authToken";
 import { spinner } from "../Others/Spinner";
 
 const Signin = () => {
   useTitle("SignIn");
   const { signIn, googleSignIn, loading } = useContext(AuthContext);
-
   const navigate = useNavigate();
   const location = useLocation();
   const from = location.state?.from?.pathname || "/";
+
+  if (loading) {
+    return spinner();
+  }
 
   const handleSignin = (event) => {
     event.preventDefault();
@@ -25,26 +29,10 @@ const Signin = () => {
     signIn(email, password)
       .then((res) => {
         const user = res.user;
-        const currentUser = {
-          email: user.email,
-        }
-
-        fetch("http://localhost:5000/jwt", {
-          method: "POST",
-          headers: {
-            'content-type': 'application/json',
-          },
-          body: JSON.stringify(currentUser)
-        })
-        .then(res => res.json())
-        .then(data => {
-          localStorage.setItem('token', data.token);
-          toast.success("SignIn Succesfull!!");
-          navigate(from, { replace: true });
-          form.reset();
-        })
-
-        
+        authToken(user);
+        toast.success("SignIn Succesfull!!");
+        navigate(from, { replace: true });
+        form.reset();
       })
       .catch((err) => {
         toast.error(err.message);
@@ -54,6 +42,8 @@ const Signin = () => {
   const handleGoogleSignIn = () => {
     googleSignIn()
       .then((res) => {
+        const user = res.user;
+        authToken(user);
         toast.success("SignIn Succesfull!!");
         navigate(from, { replace: true });
       })
@@ -62,9 +52,7 @@ const Signin = () => {
       });
   };
 
-  if (loading) {
-    return spinner();
-  }
+  
 
   return (
     <div className="flex lg:flex-row flex-col items-center justify-evenly mb-10">

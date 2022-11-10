@@ -25,7 +25,7 @@ const MyReviews = () => {
       .then((data) => {
         setReviews(data);
       });
-  }, [user?.email,logOut, refresh]);
+  }, [user?.email, logOut, refresh]);
 
   const handleReveiwDelete = (id) => {
     fetch(`http://localhost:5000/my_reviews/${id}`, {

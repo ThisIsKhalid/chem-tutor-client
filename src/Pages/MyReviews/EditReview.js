@@ -42,8 +42,8 @@ const EditReview = () => {
   };
 
   return (
-    <div>
-      <h1 className="text-center text-red-500 font-bold text-3xl uppercase mb-10">
+    <div className="mb-10">
+      <h1 className="text-center text-red-500 font-bold text-3xl uppercase mb-7">
         Edit your review:
       </h1>
       <div className="lg:w-1/2 md:w-3/4 w-11/12 px-8 py-16 mx-auto rounded-lg  md:px-12 lg:px-16 xl:px-32 text-gray-800 border border-gray-500 bg-gray-100">

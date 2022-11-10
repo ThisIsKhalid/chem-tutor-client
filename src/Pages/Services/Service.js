@@ -4,7 +4,6 @@ import "react-photo-view/dist/react-photo-view.css";
 import { Link } from "react-router-dom";
 
 const Service = ({ service }) => {
-
   const { _id, name, img, price, description } = service;
 
   return (

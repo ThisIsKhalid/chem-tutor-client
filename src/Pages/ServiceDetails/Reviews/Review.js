@@ -16,7 +16,9 @@ const Review = ({ review }) => {
           </div>
           <div>
             <h4 className="font-bold">{name}</h4>
-            <span className="text-xs text-gray-600">{`${time}`.slice(0, 10)}</span>
+            <span className="text-xs text-gray-600">
+              {`${time}`.slice(0, 10)}
+            </span>
           </div>
         </div>
       </div>

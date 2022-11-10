@@ -3,14 +3,16 @@ import { toast } from "react-toastify";
 import subscribelogo from "../../Assets/Email campaign-pana.svg";
 
 const Subscribe = () => {
-    const handleSubscribe = (event) => {
-      event.preventDefault();
-      const email = event.target.email.value;
-      if(email){
-        toast.success('Thanks for subscribe. We will inform you when our new course get published!')
-        event.target.reset();
-      }
-    };
+  const handleSubscribe = (event) => {
+    event.preventDefault();
+    const email = event.target.email.value;
+    if (email) {
+      toast.success(
+        "Thanks for subscribe. We will inform you when our new course get published!"
+      );
+      event.target.reset();
+    }
+  };
   return (
     <div className="bg-cyan-900">
       <div className="container px-6 lg:py-2 py-10 mx-auto">
@@ -35,7 +37,10 @@ const Subscribe = () => {
                 arrive.
               </p>
 
-              <form onSubmit={handleSubscribe} className="flex flex-col mt-8 space-y-3 lg:space-y-0 lg:flex-row">
+              <form
+                onSubmit={handleSubscribe}
+                className="flex flex-col mt-8 space-y-3 lg:space-y-0 lg:flex-row"
+              >
                 <input
                   required
                   name="email"

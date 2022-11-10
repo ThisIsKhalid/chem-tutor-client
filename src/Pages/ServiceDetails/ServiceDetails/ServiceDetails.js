@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
+import { PhotoProvider, PhotoView } from "react-photo-view";
+import "react-photo-view/dist/react-photo-view.css";
 import { useParams } from "react-router-dom";
 import useTitle from "../../../Hooks/useTitle";
 import Reviews from "../Reviews/Reviews";
-import { PhotoProvider, PhotoView } from "react-photo-view";
-import "react-photo-view/dist/react-photo-view.css";
 
 const ServiceDetails = () => {
   useTitle("Course_Details");
