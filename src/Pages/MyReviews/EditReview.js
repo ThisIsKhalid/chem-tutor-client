@@ -4,14 +4,16 @@ import { toast } from "react-toastify";
 import useTitle from "../../Hooks/useTitle";
 
 const EditReview = () => {
-  useTitle('Edit-Review')
+  useTitle("Edit-Review");
   const review = useLoaderData();
   const { _id, serviceId, description } = review;
   const [service, setService] = useState({});
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch(`http://localhost:5000/services/${serviceId}`)
+    fetch(
+      `https://b6a11-service-review-server-side-this-is-khalid.vercel.app/services/${serviceId}`
+    )
       .then((res) => res.json())
       .then((data) => setService(data));
   }, [serviceId]);
@@ -25,18 +27,21 @@ const EditReview = () => {
       time,
     };
 
-    fetch(`http://localhost:5000/edit_reveiw/${_id}`, {
-      method: "PATCH",
-      headers: {
-        "Content-type": "application/json",
-      },
-      body: JSON.stringify(editedReview),
-    })
+    fetch(
+      `https://b6a11-service-review-server-side-this-is-khalid.vercel.app/edit_reveiw/${_id}`,
+      {
+        method: "PATCH",
+        headers: {
+          "Content-type": "application/json",
+        },
+        body: JSON.stringify(editedReview),
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         if (data.modifiedCount > 0) {
           toast.success("Successfully Review updated!!");
-        navigate("/my_reveiws");
+          navigate("/my_reveiws");
         }
       });
   };

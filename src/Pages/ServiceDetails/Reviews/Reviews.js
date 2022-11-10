@@ -11,7 +11,9 @@ const Reviews = ({ serviceId }) => {
   const [refresh, setRefresh] = useState(true);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/reviews/${serviceId}`)
+    fetch(
+      `https://b6a11-service-review-server-side-this-is-khalid.vercel.app/reviews/${serviceId}`
+    )
       .then((res) => res.json())
       .then((data) => {
         setReviews(data);
@@ -31,13 +33,16 @@ const Reviews = ({ serviceId }) => {
       time,
     };
 
-    fetch("http://localhost:5000/reviews", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(newReview),
-    })
+    fetch(
+      "https://b6a11-service-review-server-side-this-is-khalid.vercel.app/reviews",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(newReview),
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         if (data.acknowledged) {

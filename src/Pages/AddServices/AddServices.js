@@ -3,7 +3,7 @@ import { toast } from "react-toastify";
 import useTitle from "../../Hooks/useTitle";
 
 const AddServices = () => {
-  useTitle('Add-Service')
+  useTitle("Add-Service");
   const handleAddService = (event) => {
     event.preventDefault();
     const form = event.target;
@@ -19,13 +19,16 @@ const AddServices = () => {
       description,
     };
 
-    fetch("http://localhost:5000/add_service", {
-      method: "POST",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(newService),
-    })
+    fetch(
+      "https://b6a11-service-review-server-side-this-is-khalid.vercel.app/add_service",
+      {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(newService),
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         if (data.acknowledged) {

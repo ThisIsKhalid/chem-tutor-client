@@ -13,7 +13,9 @@ const Home = () => {
   const [services, setServices] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/latest")
+    fetch(
+      "https://b6a11-service-review-server-side-this-is-khalid.vercel.app/latest"
+    )
       .then((res) => res.json())
       .then((data) => setServices(data));
   }, []);

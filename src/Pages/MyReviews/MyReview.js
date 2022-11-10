@@ -6,7 +6,9 @@ const MyReview = ({ review, handleReveiwDelete }) => {
   const [service, setService] = useState({});
 
   useEffect(() => {
-    fetch(`http://localhost:5000/services/${serviceId}`)
+    fetch(
+      `https://b6a11-service-review-server-side-this-is-khalid.vercel.app/services/${serviceId}`
+    )
       .then((res) => res.json())
       .then((data) => setService(data));
   }, [serviceId]);

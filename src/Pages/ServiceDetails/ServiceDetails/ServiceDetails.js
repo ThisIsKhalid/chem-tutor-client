@@ -13,7 +13,9 @@ const ServiceDetails = () => {
   const { name, img, price, description } = service;
 
   useEffect(() => {
-    fetch(`http://localhost:5000/services/${id}`)
+    fetch(
+      `https://b6a11-service-review-server-side-this-is-khalid.vercel.app/services/${id}`
+    )
       .then((res) => res.json())
       .then((data) => setService(data));
   }, [id]);

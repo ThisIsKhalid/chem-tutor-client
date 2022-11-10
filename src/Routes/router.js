@@ -29,7 +29,10 @@ export const router = createBrowserRouter([
       {
         path: "/services",
         element: <Services></Services>,
-        loader: () => fetch("http://localhost:5000/services"),
+        loader: () =>
+          fetch(
+            "https://b6a11-service-review-server-side-this-is-khalid.vercel.app/services"
+          ),
       },
       {
         path: "/services/:id",
@@ -71,7 +74,9 @@ export const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/edit_reveiw/${params.id}`),
+          fetch(
+            `https://b6a11-service-review-server-side-this-is-khalid.vercel.app/edit_reveiw/${params.id}`
+          ),
       },
     ],
   },

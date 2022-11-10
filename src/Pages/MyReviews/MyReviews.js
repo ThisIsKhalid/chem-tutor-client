@@ -11,11 +11,14 @@ const MyReviews = () => {
   const [refresh, setRefresh] = useState(true);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/my_reviews?email=${user?.email}`, {
-      headers: {
-        authorization: `Bearer ${localStorage.getItem("token")}`,
-      },
-    })
+    fetch(
+      `https://b6a11-service-review-server-side-this-is-khalid.vercel.app/my_reviews?email=${user?.email}`,
+      {
+        headers: {
+          authorization: `Bearer ${localStorage.getItem("token")}`,
+        },
+      }
+    )
       .then((res) => {
         if (res.status === 401 || res.status === 403) {
           return logOut();
@@ -28,9 +31,12 @@ const MyReviews = () => {
   }, [user?.email, logOut, refresh]);
 
   const handleReveiwDelete = (id) => {
-    fetch(`http://localhost:5000/my_reviews/${id}`, {
-      method: "DELETE",
-    })
+    fetch(
+      `https://b6a11-service-review-server-side-this-is-khalid.vercel.app/my_reviews/${id}`,
+      {
+        method: "DELETE",
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         if (data.deletedCount > 0) {
