@@ -15,7 +15,6 @@ const Reviews = ({ serviceId }) => {
       .then((res) => res.json())
       .then((data) => {
         setReviews(data);
-        setRefresh(!refresh);
       });
   }, [serviceId, refresh]);
 
@@ -43,6 +42,7 @@ const Reviews = ({ serviceId }) => {
       .then((data) => {
         if (data.acknowledged) {
           toast.success("Thanks for your Honest review!");
+          setRefresh(!refresh);
           event.target.reset();
         }
       });

@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import chemistry_animation from "../../Assets/chemistry-animation.json";
 import useTitle from "../../Hooks/useTitle";
 import Service from "../Services/Service";
+import StudentsReview from "./StudentsReview";
 import Subscribe from "./Subscribe";
 
 const Home = () => {
@@ -74,6 +75,9 @@ const Home = () => {
           </Link>
         </p>
       </div>
+
+      {/* <------------------student review ----------------> */}
+      <StudentsReview></StudentsReview>
 
       {/* <-------------- subscribe ---------------> */}
       <Subscribe></Subscribe>
