@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const MyReview = ({ review, handleReveiwDelete }) => {
   const {_id, serviceId, name, img, description, time } = review;
@@ -39,8 +40,13 @@ const MyReview = ({ review, handleReveiwDelete }) => {
       </div>
       <div className="flex justify-end pt-3">
         <div>
-          <button className="btn btn-warning btn-sm mr-2">Edit</button>
-          <button onClick={() => handleReveiwDelete(_id)} className="btn btn-error btn-sm">
+          <Link to={`/edit_reveiw/${_id}`} className="btn btn-warning btn-sm mr-2">
+            Edit
+          </Link>
+          <button
+            onClick={() => handleReveiwDelete(_id)}
+            className="btn btn-error btn-sm"
+          >
             Delete
           </button>
         </div>
