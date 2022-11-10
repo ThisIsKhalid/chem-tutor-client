@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import chemistry_animation from "../../Assets/chemistry-animation.json";
 import useTitle from "../../Hooks/useTitle";
 import Service from "../Services/Service";
+import Subscribe from "./Subscribe";
 
 const Home = () => {
   useTitle("Home");
@@ -59,7 +60,7 @@ const Home = () => {
           <span className="text-cyan-500">Latest Courses</span>
           <FaAngleRight />
         </h1>
-        <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-10">
+        <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-10 mx-5 md:mx-0">
           {services.map((service) => (
             <Service key={service._id} service={service}></Service>
           ))}
@@ -73,6 +74,9 @@ const Home = () => {
           </Link>
         </p>
       </div>
+
+      {/* <-------------- subscribe ---------------> */}
+      <Subscribe></Subscribe>
     </section>
   );
 };

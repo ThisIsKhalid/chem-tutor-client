@@ -36,7 +36,7 @@ const AddServices = () => {
   };
 
   return (
-    <div>
+    <div className="mb-10">
       <h1 className="text-center text-blue-500 font-bold text-3xl uppercase mb-10">
         Add New Service
       </h1>
