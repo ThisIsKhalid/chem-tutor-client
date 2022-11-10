@@ -58,6 +58,7 @@ const Signup = () => {
         const user = res.user;
         authToken(user);
         toast.success("SignIn Succesfull!!");
+        navigate("/");
       })
       .catch((err) => {
         toast.error(err.message);
@@ -66,7 +67,7 @@ const Signup = () => {
 
 
   return (
-    <div className="flex lg:flex-row flex-col items-center justify-evenly mb-10">
+    <div className="flex lg:flex-row flex-col items-center justify-evenly mb-10 mx-5 md:mx-0">
       <div className="lg:w-1/2 md:w-3/4 w-full">
         <img className="w-3/4 mx-auto" src={signupImg} alt="" />
       </div>

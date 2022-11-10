@@ -47,7 +47,7 @@ const MyReviews = () => {
   };
 
   return (
-    <div>
+    <div className="mx-5 md:mx-0">
       {reviews.length ? (
         <div>
           {reviews.map((review) => (
