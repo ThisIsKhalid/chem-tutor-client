@@ -56,7 +56,7 @@ const Reviews = ({ serviceId }) => {
         <FaAngleRight />
       </h1>
 
-      <div className="grid lg:grid-cols-3 sm:grid-cols-2 gap-5">
+      <div className="grid lg:grid-cols-3 sm:grid-cols-2 gap-5 sm:mx-0 mx-3">
         {reviews.map((review) => (
           <Review key={review._id} review={review}></Review>
         ))}
