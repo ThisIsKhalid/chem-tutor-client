@@ -14,8 +14,8 @@ const MyReviews = () => {
     fetch(`http://localhost:5000/my_reviews?email=${user?.email}`)
       .then((res) => res.json())
       .then((data) => {
-        setRefresh(!refresh);
         setReviews(data);
+        setRefresh(!refresh);
       });
   }, [user?.email, refresh]);
 

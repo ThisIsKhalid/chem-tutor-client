@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { FaFacebook, FaGithub, FaGoogle } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import signupImg from "../../Assets/Sign up-bro.svg";
 import { AuthContext } from "../../Context/AuthProvider";
@@ -11,6 +11,7 @@ const Signup = () => {
   useTitle("SignUp");
   const { register, updateUserProfile, googleSignIn, loading } =
     useContext(AuthContext);
+    const navigate = useNavigate();
 
   const handleSignUp = (event) => {
     event.preventDefault();
@@ -33,6 +34,7 @@ const Signup = () => {
           .then(() => {
             toast.success("Profile Updated!!");
             form.reset();
+            navigate('/')
           })
           .catch((err) => {
             toast.error("Profile updating failed. Please try again");
