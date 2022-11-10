@@ -1,82 +1,57 @@
 import React from 'react';
+import quotes1 from '../../Assets/double-quotes1.png'
+import quotes2 from '../../Assets/double-quotes2.png'
 
 const StudentsReview = () => {
     return (
-      <div className=" bg-emerald-50">
+      <div className=" bg-emerald-50 py-10 md:py-2">
         <div className="container mx-auto flex flex-col items-center pb-6 mb-4 md:p-10 md:px-12">
-          <h1 className="text-4xl font-semibold leading-none text-center">
-            What our customers are saying about us
+          <h1 className="text-3xl font-semibold leading-none text-center font-mono">
+            What my succesfull students are saying about ChemTutor
           </h1>
         </div>
         <div className="container mx-auto grid grid-cols-1 gap-8 lg:gap-20 md:px-10 md:pb-10 lg:grid-cols-2">
           <div className="flex flex-col items-center mx-12 lg:mx-0">
             <div className="relative text-center">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 512 512"
-                fill="currentColor"
-                className="absolute top-0 left-0 w-8 h-8 text-gray-300"
-              >
-                <path d="M232,246.857V16H16V416H54.4ZM48,48H200V233.143L48,377.905Z"></path>
-                <path d="M280,416h38.4L496,246.857V16H280ZM312,48H464V233.143L312,377.905Z"></path>
-              </svg>
+              <img
+                className="absolute -top-4 -left-4 w-10 h-10 text-gray-300"
+                src={quotes1}
+                alt=""
+              />
               <p className="px-6 py-1 text-lg italic">
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                Voluptatibus quibusdam, eligendi exercitationem molestias
-                possimus facere.
+                Without chemtutor, it would be difficult for me to gain the
+                skills I need to maintain a consistent pace of learning while
+                working full time.
               </p>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 512 512"
-                fill="currentColor"
-                className="absolute bottom-0 right-0 w-8 h-8 text-gray-300"
-              >
-                <path d="M280,185.143V416H496V16H457.6ZM464,384H312V198.857L464,54.1Z"></path>
-                <path d="M232,16H193.6L16,185.143V416H232ZM200,384H48V198.857L200,54.1Z"></path>
-              </svg>
+              <img
+                className="absolute -bottom-3 right-0 w-10 h-10 text-gray-300"
+                src={quotes2}
+                alt=""
+              />
             </div>
             <span className="w-12 h-1 my-2 rounded-lg bg-sky-600"></span>
-            <p>Leroy Jenkins</p>
+            <p className="text-xl font-medium text-gray-700">Istiak Niloy</p>
           </div>
           <div className="flex flex-col items-center max-w-lg mx-12 lg:mx-0">
             <div className="relative text-center">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 512 512"
-                className="absolute top-0 left-0 w-8 h-8 text-gray-300"
-              >
-                <path
-                  fill="currentColor"
-                  d="M232,246.857V16H16V416H54.4ZM48,48H200V233.143L48,377.905Z"
-                ></path>
-                <path
-                  fill="currentColor"
-                  d="M280,416h38.4L496,246.857V16H280ZM312,48H464V233.143L312,377.905Z"
-                ></path>
-              </svg>
+              <img
+                className="absolute -top-2 -left-2 w-10 h-10 text-gray-300"
+                src={quotes1}
+                alt=""
+              />
               <p className="px-6 py-1 text-lg italic">
-                Accusantium illum cupiditate harum asperiores iusto quos quasi
-                quis quae! Fugit doloribus, voluptatum quidem magnam velit
-                excepturi nobis, reprehenderit ducimus incidunt quisquam quae
-                veritatis, quos iure harum.
+                Chemtutor helped me hons my skills and switch careers thanks to
+                high quality coursework, reading, exercises, video lectures and
+                discussion forums.
               </p>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 512 512"
-                className="absolute bottom-0 right-0 w-8 h-8 text-gray-300"
-              >
-                <path
-                  fill="currentColor"
-                  d="M280,185.143V416H496V16H457.6ZM464,384H312V198.857L464,54.1Z"
-                ></path>
-                <path
-                  fill="currentColor"
-                  d="M232,16H193.6L16,185.143V416H232ZM200,384H48V198.857L200,54.1Z"
-                ></path>
-              </svg>
+              <img
+                className="absolute -bottom-1 -right-1 w-10 h-10 text-gray-300"
+                src={quotes2}
+                alt=""
+              />
             </div>
             <span className="w-12 h-1 my-2 rounded-lg bg-sky-600"></span>
-            <p>Leroy Jenkins</p>
+            <p className="text-xl font-medium text-gray-700">Avilas Roy</p>
           </div>
         </div>
       </div>
