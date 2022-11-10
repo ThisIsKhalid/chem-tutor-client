@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import useTitle from "../../../Hooks/useTitle";
 import Reviews from "../Reviews/Reviews";
 
 const ServiceDetails = () => {
-  let { id } = useParams();
+  useTitle("Course_Details");
+  const { id } = useParams();
 
   const [service, setService] = useState({});
-  const { name, img, price,  description } = service;
+  const { name, img, price, description } = service;
 
   useEffect(() => {
     fetch(`http://localhost:5000/services/${id}`)

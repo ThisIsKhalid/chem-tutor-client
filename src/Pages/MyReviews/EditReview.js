@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { useLoaderData, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+import useTitle from "../../Hooks/useTitle";
 
 const EditReview = () => {
+  useTitle('Edit-Review')
   const review = useLoaderData();
   const { _id, serviceId, description } = review;
   const [service, setService] = useState({});

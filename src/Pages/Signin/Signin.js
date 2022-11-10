@@ -4,11 +4,13 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import signinImg from "../../Assets/Sign in.svg";
 import { AuthContext } from "../../Context/AuthProvider";
+import useTitle from "../../Hooks/useTitle";
 import { spinner } from "../Others/Spinner";
 
 const Signin = () => {
+  useTitle("SignIn");
   const { signIn, googleSignIn, loading } = useContext(AuthContext);
-  
+
   const navigate = useNavigate();
   const location = useLocation();
   const from = location.state?.from?.pathname || "/";

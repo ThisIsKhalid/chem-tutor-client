@@ -4,10 +4,13 @@ import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
 import signupImg from "../../Assets/Sign up-bro.svg";
 import { AuthContext } from "../../Context/AuthProvider";
+import useTitle from "../../Hooks/useTitle";
 import { spinner } from "../Others/Spinner";
 
 const Signup = () => {
-  const { register, updateUserProfile, googleSignIn, loading } = useContext(AuthContext);
+  useTitle("SignUp");
+  const { register, updateUserProfile, googleSignIn, loading } =
+    useContext(AuthContext);
 
   const handleSignUp = (event) => {
     event.preventDefault();
@@ -21,20 +24,19 @@ const Signup = () => {
     register(email, password)
       .then((res) => {
         // const user = res.user;
-        toast.success('Thanks for joining us!!');
+        toast.success("Thanks for joining us!!");
 
         updateUserProfile({
           displayName: name,
           photoURL: photoURL,
         })
-        .then(() => {
-            toast.success('Profile Updated!!');
+          .then(() => {
+            toast.success("Profile Updated!!");
             form.reset();
-        })
-        .catch(err => {
-            toast.error('Profile updating failed. Please try again');
-            
-        })
+          })
+          .catch((err) => {
+            toast.error("Profile updating failed. Please try again");
+          });
       })
       .catch((err) => {
         toast.error(err.message);

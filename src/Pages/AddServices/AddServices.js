@@ -1,7 +1,9 @@
 import React from "react";
 import { toast } from "react-toastify";
+import useTitle from "../../Hooks/useTitle";
 
 const AddServices = () => {
+  useTitle('Add-Service')
   const handleAddService = (event) => {
     event.preventDefault();
     const form = event.target;

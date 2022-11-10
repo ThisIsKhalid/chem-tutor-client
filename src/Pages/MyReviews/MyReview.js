@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const MyReview = ({ review, handleReveiwDelete }) => {
-  const {_id, serviceId, name, img, description, time } = review;
+  const { _id, serviceId, name, img, description, time } = review;
   const [service, setService] = useState({});
 
   useEffect(() => {
@@ -40,7 +40,10 @@ const MyReview = ({ review, handleReveiwDelete }) => {
       </div>
       <div className="flex justify-end pt-3">
         <div>
-          <Link to={`/edit_reveiw/${_id}`} className="btn btn-warning btn-sm mr-2">
+          <Link
+            to={`/edit_reveiw/${_id}`}
+            className="btn btn-warning btn-sm mr-2"
+          >
             Edit
           </Link>
           <button

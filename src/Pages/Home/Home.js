@@ -3,9 +3,11 @@ import React, { useEffect, useState } from "react";
 import { FaAngleLeft, FaAngleRight, FaArrowRight } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import chemistry_animation from "../../Assets/chemistry-animation.json";
+import useTitle from "../../Hooks/useTitle";
 import Service from "../Services/Service";
 
 const Home = () => {
+  useTitle("Home");
   const [services, setServices] = useState([]);
 
   useEffect(() => {
@@ -49,8 +51,8 @@ const Home = () => {
           <Lottie animationData={chemistry_animation} loop={true} />;
         </div>
       </div>
-      
-    {/*--------- trending now section  ------------*/}
+
+      {/*--------- trending now section  ------------*/}
       <div className="container mx-auto">
         <h1 className="text-4xl font-bold mb-10 flex items-center justify-center">
           <FaAngleLeft />
@@ -62,7 +64,14 @@ const Home = () => {
             <Service key={service._id} service={service}></Service>
           ))}
         </div>
-        <p className="text-center my-10"><Link to='/services' className="py-2 px-5 bg-cyan-500 rounded-md text-xl font-medium text-white">See All</Link></p>
+        <p className="text-center my-10">
+          <Link
+            to="/services"
+            className="py-2 px-5 bg-cyan-500 rounded-md text-xl font-medium text-white"
+          >
+            See All
+          </Link>
+        </p>
       </div>
     </section>
   );
