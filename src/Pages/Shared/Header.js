@@ -58,6 +58,16 @@ const Header = () => {
               Courses
             </Link>
           </li>
+          <li>
+            <Link
+              to="/blogs"
+              aria-label="Blogs"
+              title="Blogs"
+              className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-purple-600"
+            >
+              Blogs
+            </Link>
+          </li>
           {user?.email ? (
             <>
               <li>
@@ -196,6 +206,16 @@ const Header = () => {
                         className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-purple-600"
                       >
                         Courses
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        to="/blogs"
+                        aria-label="Blogs"
+                        title="Blogs"
+                        className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-purple-600"
+                      >
+                        Blogs
                       </Link>
                     </li>
                     {user?.email ? (
