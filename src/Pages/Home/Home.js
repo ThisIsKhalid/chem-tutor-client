@@ -7,6 +7,8 @@ import useTitle from "../../Hooks/useTitle";
 import Service from "../Services/Service";
 import StudentsReview from "./StudentsReview";
 import Subscribe from "./Subscribe";
+import WhoWeAre from "./WhoWeAre";
+import WhyChoose from "./WhyChoose";
 
 const Home = () => {
   useTitle("Home");
@@ -42,7 +44,7 @@ const Home = () => {
           <div className="flex flex-col space-y-4 sm:items-center sm:justify-center sm:flex-row sm:space-y-0 sm:space-x-4 lg:justify-start">
             <Link
               to="/services"
-              className="px-5 py-2 text-lg font-semibold border rounded border-orange-600 flex items-center uppercase hover:bg-orange-400 hover:text-white"
+              className="px-5 py-2 text-lg font-semibold border-2 rounded border-emerald-500 flex items-center uppercase hover:bg-emerald-500 hover:text-white"
             >
               Explore All Courses
               <span className="ml-2">
@@ -71,12 +73,18 @@ const Home = () => {
         <p className="text-center my-10">
           <Link
             to="/services"
-            className="py-2 px-5 bg-cyan-500 rounded-md text-xl font-medium text-white"
+            className="py-2 px-5 bg-emerald-500 rounded-md text-xl font-medium text-white"
           >
             See All
           </Link>
         </p>
       </div>
+
+      {/* Who we are */}
+      <WhoWeAre></WhoWeAre>
+
+      {/* why choose chemtutor */}
+      <WhyChoose></WhyChoose>
 
       {/* <------------------student review ----------------> */}
       <StudentsReview></StudentsReview>
