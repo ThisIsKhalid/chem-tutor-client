@@ -27,24 +27,24 @@ const Home = () => {
       <div className="container flex flex-col justify-center p-6 mx-auto sm:py-12 lg:py-16 lg:flex-row lg:justify-evenly">
         <div className="flex flex-col justify-center p-6 text-center rounded-sm lg:max-w-md xl:max-w-lg lg:text-left">
           <div className="uppercase mb-7">
-            <h4 className="text-3xl">
+            <h4 className="md:text-3xl text-2xl">
               A{" "}
               <span className="text-orange-500 font-bold">
                 Learning Platform
               </span>
             </h4>
-            <p className="text-2xl">that helps you to Learn</p>
-            <h1 className="text-6xl text-white bg-emerald-500 font-bold border-2 py-2 px-2">
+            <p className="md:text-2xl text-xl">that helps you to Learn</p>
+            <h1 className="md:text-6xl text-4xl text-white bg-emerald-500 font-bold border-2 py-2 px-2">
               CHEMISTRY
             </h1>
-            <p className="text-2xl">
+            <p className="md:text-2xl text-xl">
               in a <span className="text-orange-500 font-bold">Fun</span> way
             </p>
           </div>
           <div className="flex flex-col space-y-4 sm:items-center sm:justify-center sm:flex-row sm:space-y-0 sm:space-x-4 lg:justify-start">
             <Link
               to="/services"
-              className="px-5 py-2 text-lg font-semibold border-2 rounded border-emerald-500 flex items-center uppercase hover:bg-emerald-500 hover:text-white"
+              className="px-5 py-2 md:text-lg text-sm font-semibold border-2 rounded border-emerald-500 flex items-center uppercase hover:bg-emerald-500 hover:text-white"
             >
               Explore All Courses
               <span className="ml-2">
@@ -59,7 +59,7 @@ const Home = () => {
       </div>
 
       {/*--------- trending now section  ------------*/}
-      <div className="container mx-auto">
+      <div className="container mx-auto px-5 lg:px-0">
         <h1 className="text-4xl font-bold mb-10 flex items-center justify-center">
           <FaAngleLeft />
           <span className="text-cyan-500">Latest Courses</span>

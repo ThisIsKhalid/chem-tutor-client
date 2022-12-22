@@ -17,10 +17,10 @@ const Service = ({ service }) => {
         <h2 className="text-2xl font-bold">{name}</h2>
         <p>{description.slice(0, 100)}</p>
         <div className="flex justify-between items-center">
-          <p className="text-2xl text-orange-500 font-bold">
+          <p className="md:text-2xl text-xl text-orange-500 font-bold">
             ${price}/<small>month</small>{" "}
           </p>
-          <Link to={`/services/${_id}`} className="btn btn-outline btn-warning">
+          <Link to={`/services/${_id}`} className="btn btn-outline btn-warning btn-sm md:btn-md">
             View Details
           </Link>
         </div>

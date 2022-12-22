@@ -3,15 +3,15 @@ import img from "../../Assets/blog_01.jpg";
 
 const WhoWeAre = () => {
   return (
-    <section className="bg-slate-200">
+    <section className="bg-slate-200 lg:px-0 px-5">
       <div className="container mx-auto py-10">
-        <div className="grid grid-cols-2">
+        <div className="grid lg:grid-cols-2">
           <div>
             <img className="rounded-md" src={img} alt="" />
           </div>
-          <div className="flex items-center lg:px-10">
+          <div className="flex items-center lg:px-10 mt-5 lg:mt-0">
             <div>
-              <h1 className="uppercase text-3xl text-gray-700">
+              <h1 className="uppercase lg:text-3xl text-2xl text-gray-700">
                 <span className="font-bold">Who </span> We Are
               </h1>
               <p className="my-3 text-gray-600">
