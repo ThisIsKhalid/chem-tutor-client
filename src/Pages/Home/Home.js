@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import chemistry_animation from "../../Assets/chemistry-animation.json";
 import useTitle from "../../Hooks/useTitle";
 import Service from "../Services/Service";
+import ImportantFacts from "./ImportantFacts";
 import StudentsReview from "./StudentsReview";
 import Subscribe from "./Subscribe";
 import WhoWeAre from "./WhoWeAre";
@@ -59,8 +60,8 @@ const Home = () => {
       </div>
 
       {/*--------- trending now section  ------------*/}
-      <div className="container mx-auto px-5 lg:px-0">
-        <h1 className="text-4xl font-bold mb-10 flex items-center justify-center">
+      <div className="container mx-auto">
+        <h1 className="md:text-4xl text-3xl font-bold mb-10 flex items-center justify-center">
           <FaAngleLeft />
           <span className="text-cyan-500">Latest Courses</span>
           <FaAngleRight />
@@ -85,6 +86,9 @@ const Home = () => {
 
       {/* why choose chemtutor */}
       <WhyChoose></WhyChoose>
+
+      {/* important facts */}
+      <ImportantFacts></ImportantFacts>
 
       {/* <------------------student review ----------------> */}
       <StudentsReview></StudentsReview>

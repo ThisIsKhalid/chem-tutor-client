@@ -4,10 +4,10 @@ import quotes2 from "../../Assets/double-quotes2.png";
 
 const StudentsReview = () => {
   return (
-    <div className=" bg-slate-200 py-10 md:py-2">
+    <div className=" bg-slate-100 py-10 md:py-2">
       <div className="container mx-auto flex flex-col items-center pb-6 mb-4 md:p-10 md:px-12">
         <h1 className="text-3xl font-semibold text-center px-2 md:px-0 text-gray-700">
-          What my succesfull students are saying about <span className="uppercase text-emerald-500">Chem Tutor</span>
+          What our succesfull students are saying about <span className="uppercase text-emerald-500">Chem Tutor</span>
         </h1>
       </div>
       <div className="container mx-auto grid grid-cols-1 gap-8 lg:gap-20 md:px-10 md:pb-10 lg:grid-cols-2">

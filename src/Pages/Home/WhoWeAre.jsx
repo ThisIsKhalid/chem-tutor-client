@@ -3,8 +3,8 @@ import img from "../../Assets/blog_01.jpg";
 
 const WhoWeAre = () => {
   return (
-    <section className="bg-slate-200 lg:px-0 px-5">
-      <div className="container mx-auto py-10">
+    <section className="bg-slate-100 lg:px-0 px-5 py-10">
+      <div className="container mx-auto">
         <div className="grid lg:grid-cols-2">
           <div>
             <img className="rounded-md" src={img} alt="" />
