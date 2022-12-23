@@ -1,19 +1,23 @@
 import Lottie from "lottie-react";
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { FaAngleLeft, FaAngleRight, FaArrowRight } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import chemistry_animation from "../../Assets/chemistry-animation.json";
+import { AuthContext } from "../../Context/AuthProvider";
 import useTitle from "../../Hooks/useTitle";
+import { spinner } from "../Others/Spinner";
 import Service from "../Services/Service";
 import ImportantFacts from "./ImportantFacts";
-import StudentsReview from "./StudentsReview";
 import Subscribe from "./Subscribe";
+import Testimonial from "./Testimonial";
 import WhoWeAre from "./WhoWeAre";
 import WhyChoose from "./WhyChoose";
 
 const Home = () => {
   useTitle("Home");
   const [services, setServices] = useState([]);
+  const { loading } = useContext(AuthContext);
+
 
   useEffect(() => {
     fetch(
@@ -22,6 +26,10 @@ const Home = () => {
       .then((res) => res.json())
       .then((data) => setServices(data));
   }, []);
+
+  if (loading) {
+    return spinner();
+  }
 
   return (
     <section className="text-gray-800">
@@ -90,8 +98,8 @@ const Home = () => {
       {/* important facts */}
       <ImportantFacts></ImportantFacts>
 
-      {/* <------------------student review ----------------> */}
-      <StudentsReview></StudentsReview>
+      {/* <------------------testimonial ----------------> */}
+      <Testimonial></Testimonial>
 
       {/* <-------------- subscribe ---------------> */}
       <Subscribe></Subscribe>
