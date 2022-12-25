@@ -3,7 +3,7 @@ import books from '../../Assets/books.png'
 
 const WhyChoose = () => {
     return (
-      <div className="container mx-auto py-3 my-5 lg:px-0 px-5">
+      <div className="container mx-auto py-10 my-5 lg:px-0 px-5">
         <div className="flex flex-col items-center justify-center">
           <h1 className="uppercase text-3xl font-semibold">
             Why Choose <br/><span className="text-emerald-500">Chem Tutor</span>

@@ -6,7 +6,7 @@ import testimonial1 from "../../Assets/testimonial1.jpg";
 
 const Testimonial = () => {
   return (
-    <div className="container mx-auto my-10">
+    <div className="container mx-auto py-10">
       <div className="flex flex-col items-center justify-center mb-10">
         <h1 className="uppercase text-3xl font-semibold text-center">
           Our

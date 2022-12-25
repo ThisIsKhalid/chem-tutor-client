@@ -5,7 +5,7 @@ import logo from "../../Assets/chemistry.png";
 
 const Footer = () => {
   return (
-    <footer className="px-4 divide-y bg-gray-200 text-black">
+    <footer className="px-4 divide-y bg-slate-100 text-black">
       <div className="container flex flex-col justify-between py-10 mx-auto space-y-8 lg:flex-row lg:space-y-0">
         <div className="lg:w-1/3">
           <Link
@@ -13,10 +13,7 @@ const Footer = () => {
             to="/"
             className="flex items-center justify-center space-x-3 lg:justify-start"
           >
-            <div className="flex items-center justify-center">
-              <img src={logo} alt="" />
-            </div>
-            <span className="ml-2 text-2xl font-bold font-mono tracking-wide uppercase">
+            <span className="ml-2 text-xl font-bold font-mono tracking-wide uppercase">
               <span className="bg-emerald-600 text-white border-2 border-emerald-600 py-1 px-2 rounded-l-md">
                 CHEM
               </span>

@@ -20,7 +20,7 @@ const Header = () => {
   };
 
   return (
-    <div className="px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
+    <div className="px-4 py-4 md:px-24 lg:px-8 bg-slate-100">
       <div className="relative flex items-center justify-between">
         <Link
           to="/"
@@ -28,7 +28,7 @@ const Header = () => {
           title="CHEM TUTOR"
           className="inline-flex items-center"
         >
-          <img className="h-14 w-full" src={logo} alt="" />
+          <img className="h-12 w-full" src={logo} alt="" />
           <span className="ml-2 text-2xl font-bold font-mono tracking-wide uppercase">
             <span className="bg-emerald-600 text-white border-2 border-emerald-600 py-1 px-2 rounded-l-md">
               CHEM
